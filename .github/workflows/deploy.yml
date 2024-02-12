@@ -13,8 +13,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Upload to Pinata
-        uses: ipfs-shipyard/ipfs-deploy@v0.3.1
+        uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
         with:
-          apiKey: ${{ secrets.PINATA_API_KEY }}
-          apiSecret: ${{ secrets.PINATA_API_SECRET }}
-          sourcePath: .  # Upload all files from the repository
+          pin-name: 'My personal site'
+          path: './build'
+          pinata-api-key: b2ef103c3746a03df375
+          pinata-secret-api-key: b79749f540fd01bd2874c4d8280f38002147a1b4382c77acc777ba99ede0e420
+          verbose: true
+          remove-old: false
